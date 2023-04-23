@@ -20,14 +20,13 @@ while not end_of_game:
     guess = input("Guess a letter: ").lower()
     clear()
     if guess in display:
-      print(f"You already guessed the letter '{letter}'")
+        print(f"You already guessed the letter '{letter}'")
     for position in range(word_length):
         letter = chosen_word[position]
         #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
         if letter == guess:
             display[position] = letter
 
-    
     if guess not in chosen_word:
         lives -= 1
         print(f"You guessed the letter '{guess}'. This isn't in the word.")
@@ -35,9 +34,8 @@ while not end_of_game:
             end_of_game = True
             print("You lose.")
 
-    
     print(f"{' '.join(display)}")
-  
+
     if "_" not in display:
         end_of_game = True
         print("You win.")
